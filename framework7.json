@@ -1,0 +1,27 @@
+{
+  "cwd": "/home/reykim/github/bonker",
+  "type": [
+    "web",
+    "pwa",
+    "capacitor"
+  ],
+  "name": "Bonker",
+  "framework": "svelte",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": "scss",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.bonker",
+  "capacitor": {
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}
