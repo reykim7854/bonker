@@ -1,48 +1,47 @@
+import OverviewPage from "../pages/overview.svelte";
+import RecurringPage from "../pages/recurring.svelte";
+import FormPage from "../pages/form.svelte";
+import AccountsPage from "../pages/accounts.svelte";
+import ProductPage from "../pages/product.svelte";
+import SettingsPage from "../pages/settings.svelte";
 
-import OverviewPage from '../pages/overview.svelte';
-import RecurringPage from '../pages/recurring.svelte';
-import FormPage from '../pages/form.svelte';
-import AccountsPage from '../pages/accounts.svelte';
-import ProductPage from '../pages/product.svelte';
-import SettingsPage from '../pages/settings.svelte';
+import DynamicRoutePage from "../pages/dynamic-route.svelte";
+import RequestAndLoad from "../pages/request-and-load.svelte";
+import NotFoundPage from "../pages/404.svelte";
 
-import DynamicRoutePage from '../pages/dynamic-route.svelte';
-import RequestAndLoad from '../pages/request-and-load.svelte';
-import NotFoundPage from '../pages/404.svelte';
-
-var routes = [
+export const routes = [
   {
-    path: '/',
+    path: "/",
     component: OverviewPage,
   },
   {
-    path: '/recurring/',
+    path: "/recurring/",
     component: RecurringPage,
   },
   {
-    path: '/form/',
+    path: "/form/",
     component: FormPage,
   },
   {
-    path: '/accounts/',
+    path: "/accounts/",
     component: AccountsPage,
   },
   {
-    path: '/product/:id/',
+    path: "/product/:id/",
     component: ProductPage,
   },
   {
-    path: '/settings/',
+    path: "/settings/",
     component: SettingsPage,
   },
 
   {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
+    path: "/dynamic-route/blog/:blogId/post/:postId/",
     component: DynamicRoutePage,
   },
   {
-    path: '/request-and-load/user/:userId/',
-    async: function ({ router, to, resolve }) {
+    path: "/request-and-load/user/:userId/",
+    async: function ({ router, resolve }) {
       // App instance
       var app = router.app;
 
@@ -50,25 +49,25 @@ var routes = [
       app.preloader.show();
 
       // User ID from request
-      var userId = to.params.userId;
+      // var userId = to.params.userId;
 
       // Simulate Ajax Request
       setTimeout(function () {
         // We got user data from request
         var user = {
-          firstName: 'Vladimir',
-          lastName: 'Kharlampidi',
-          about: 'Hello, i am creator of Framework7! Hope you like it!',
+          firstName: "Vladimir",
+          lastName: "Kharlampidi",
+          about: "Hello, i am creator of Framework7! Hope you like it!",
           links: [
             {
-              title: 'Framework7 Website',
-              url: 'http://framework7.io',
+              title: "Framework7 Website",
+              url: "http://framework7.io",
             },
             {
-              title: 'Framework7 Forum',
-              url: 'http://forum.framework7.io',
+              title: "Framework7 Forum",
+              url: "http://forum.framework7.io",
             },
-          ]
+          ],
         };
         // Hide Preloader
         app.preloader.hide();
@@ -81,16 +80,14 @@ var routes = [
           {
             props: {
               user: user,
-            }
-          }
+            },
+          },
         );
       }, 1000);
     },
   },
   {
-    path: '(.*)',
+    path: "(.*)",
     component: NotFoundPage,
   },
 ];
-
-export default routes;

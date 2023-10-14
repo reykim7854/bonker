@@ -1,27 +1,28 @@
 // Import Framework7
-import Framework7 from 'framework7/lite-bundle';
+import Framework7 from "framework7/lite-bundle";
 
 // Import Framework7-Svelte Plugin
-import Framework7Svelte from 'framework7-svelte';
+import Framework7Svelte from "framework7-svelte";
 
 // Import Framework7 Styles
-import 'framework7/css/bundle';
+import "framework7/css/bundle";
 
 // Import Icons and App Custom Styles
-import '../css/icons.css';
-import '../css/app.scss';
+import "../css/icons.css";
+import "../css/app.scss";
 
 // Import App Component
-import App from '../components/app.svelte';
+import App from "../components/app.svelte";
 
 // import extra module
 import "../localization/i18n.js";
 import "./db.js";
 
 // Init F7 Svelte Plugin
-Framework7.use(Framework7Svelte)
+Framework7.use(Framework7Svelte);
 
 // Mount Svelte App
+// eslint-disable-next-line no-unused-vars
 const app = new App({
-  target: document.getElementById('app'),
+  target: document.getElementById("app"),
 });

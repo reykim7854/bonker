@@ -4,6 +4,7 @@
         "svelte.svelte-vscode",
         "formulahendry.auto-rename-tag",
         "lokalise.i18n-ally",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint"
     ]
 }

@@ -14,7 +14,7 @@
     // Query Dexie's API
     //
     const friends = await db.friends
-      .where('age')
+      .where("age")
       .between(minAge, maxAge)
       .toArray();
 
@@ -22,6 +22,7 @@
     return friends;
   });
 </script>
+
 <ul>
   {#if $friends}
     {#each $friends as friend (friend.id)}

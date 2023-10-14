@@ -13,10 +13,10 @@
   let theme = "auto";
 
   /**
-    * For toggling light or dark theme
-    * 
-    * @param event button properties for toggling theme 
-    */
+   * For toggling light or dark theme
+   *
+   * @param event button properties for toggling theme
+   */
   const toggleTheme = (event) => {
     const value = event.target.value;
     theme = value;

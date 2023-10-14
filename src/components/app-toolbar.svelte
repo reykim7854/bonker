@@ -1,10 +1,5 @@
 <script>
-  import {
-    Link,
-    Toolbar,
-    View,
-    Views,
-  } from "framework7-svelte";
+  import { Link, Toolbar, View, Views } from "framework7-svelte";
   import { _ } from "svelte-i18n";
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-   import {
+  import {
     Icon,
     Link,
     List,
@@ -17,9 +17,9 @@
       title: "Recurring",
       link: "/recurring/",
       md: "material:timer_fill",
-      ios: "f7:timer_fill"
-    }
-  ]
+      ios: "f7:timer_fill",
+    },
+  ];
 </script>
 
 <Panel id="app-panel" left cover>
@@ -27,11 +27,16 @@
     <Navbar title="Bonker" hidePanel />
     <List outlineIos strongIos menuList>
       {#each appPanelItem as item}
-      <ListItem link={item.link} title={item.title} view="current" panelClose="#app-panel">
-        <span slot="media">
-          <Icon md={item.md} ios={item.ios} />
-        </span>
-      </ListItem>
+        <ListItem
+          link={item.link}
+          title={item.title}
+          view="current"
+          panelClose="#app-panel"
+        >
+          <span slot="media">
+            <Icon md={item.md} ios={item.ios} />
+          </span>
+        </ListItem>
       {/each}
     </List>
     <Toolbar position="bottom">

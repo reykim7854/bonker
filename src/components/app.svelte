@@ -9,17 +9,13 @@
 
 <script>
   import { getDevice } from "framework7/lite-bundle";
-  import {
-    f7,
-    f7ready,
-    App,
-  } from "framework7-svelte";
+  import { f7, f7ready, App } from "framework7-svelte";
   import { onMount } from "svelte";
   import { isLoading } from "svelte-i18n";
-  import capacitorApp from "../js/capacitor-app";
+  import { capacitorApp } from "../js/capacitor-app";
 
-  import routes from "../js/routes";
-  import store from "../js/store";
+  import { routes } from "../js/routes";
+  import { store } from "../js/store";
 
   import AppPanel from "./app-panel.svelte";
   import AppToolbar from "./app-toolbar.svelte";
@@ -60,7 +56,7 @@
       swipeToClose: true,
       hideToolbarOnOpen: false,
       hideNavbarOnOpen: false,
-    }
+    },
   };
 
   onMount(() => {
@@ -73,7 +69,11 @@
 
       // Call F7 APIs here
       f7.setDarkMode(
-        storage && storage?.theme && storage.theme !== "auto" ? (storage.theme === "true" ? true : false) : "auto",
+        storage && storage?.theme && storage.theme !== "auto"
+          ? storage.theme === "true"
+            ? true
+            : false
+          : "auto",
       );
     });
   });

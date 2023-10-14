@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    "amd": true
+  },
+  "plugins": ["import", "svelte", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:svelte/recommended",
+    "plugin:import/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {},
+  "settings": {
+    "import/core-modules": [
+      "framework7/lite",
+      "framework7/lite-bundle",
+      "framework7/css/bundle",
+      "framework7-svelte"
+    ]
+  }
+}

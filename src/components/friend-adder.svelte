@@ -10,15 +10,14 @@
 
   async function addFriend() {
     try {
-
       // Add the new friend!
       const id = await db.friends.add({
         name: friendName,
-        age: friendAge
+        age: friendAge,
       });
 
       status = `Friend ${friendName} successfully added. Got id ${id}`;
-      
+
       // Reset form:
       friendName = "";
       friendAge = defaultAge;
@@ -27,22 +26,19 @@
     }
   }
 </script>
+
 <div>
   <p>{status}</p>
   <fieldset>
     <legend>Add new friend</legend>
     <label>
       Name:
-      <input
-          type="text"
-          bind:value={friendName} />
+      <input type="text" bind:value={friendName} />
     </label>
-    <br/>
+    <br />
     <label>
       Age:
-      <input
-        type="number"
-        bind:value={friendAge} />
+      <input type="number" bind:value={friendAge} />
     </label>
     <br />
     <button on:click={addFriend}>Add Friend</button>

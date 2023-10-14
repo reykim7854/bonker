@@ -1,14 +1,7 @@
 <script>
-  import {
-    Page,
-    Block,
-    BlockTitle,
-    List,
-    ListItem,
-    Button,
-  } from "framework7-svelte";
+  import { Page, BlockTitle } from "framework7-svelte";
 
-  import Navbar from "../components/navbar.svelte"
+  import Navbar from "../components/navbar.svelte";
 </script>
 
 <Page name="home">
