@@ -16,7 +16,7 @@
   } from "framework7-svelte";
   import { onMount } from "svelte";
   import { isLoading } from "svelte-i18n";
-  import cordovaApp from "../js/cordova-app";
+  import capacitorApp from "../js/capacitor-app";
 
   import routes from "../js/routes";
   import store from "../js/store";
@@ -47,10 +47,10 @@
 
     // Input settings
     input: {
-      scrollIntoViewOnFocus: device.cordova,
-      scrollIntoViewCentered: device.cordova,
+      scrollIntoViewOnFocus: device.capacitor,
+      scrollIntoViewCentered: device.capacitor,
     },
-    // Cordova Statusbar settings
+    // Capacitor Statusbar settings
     statusbar: {
       iosOverlaysWebView: true,
       androidOverlaysWebView: false,
@@ -66,9 +66,9 @@
   onMount(() => {
     const storage = JSON.parse(window.localStorage.getItem("bonker"));
     f7ready(() => {
-      // Init cordova APIs (see cordova-app.js)
-      if (f7.device.cordova) {
-        cordovaApp.init(f7);
+      // Init capacitor APIs (see capacitor-app.js)
+      if (f7.device.capacitor) {
+        capacitorApp.init(f7);
       }
 
       // Call F7 APIs here
