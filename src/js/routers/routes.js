@@ -1,13 +1,13 @@
-import OverviewPage from "../pages/overview.svelte";
-import RecurringPage from "../pages/recurring.svelte";
-import FormPage from "../pages/form.svelte";
-import AccountsPage from "../pages/accounts.svelte";
-import ProductPage from "../pages/product.svelte";
-import SettingsPage from "../pages/settings.svelte";
+import OverviewPage from "../../pages/overview.svelte";
+import RecurringPage from "../../pages/recurring.svelte";
+import FormPage from "../../pages/form.svelte";
+import AccountsPage from "../../pages/accounts.svelte";
+import ProductPage from "../../pages/product.svelte";
+import SettingsPage from "../../pages/settings.svelte";
 
-import DynamicRoutePage from "../pages/dynamic-route.svelte";
-import RequestAndLoad from "../pages/request-and-load.svelte";
-import NotFoundPage from "../pages/404.svelte";
+import DynamicRoutePage from "../../pages/dynamic-route.svelte";
+import RequestAndLoad from "../../pages/request-and-load.svelte";
+import NotFoundPage from "../../pages/404.svelte";
 
 export const routes = [
   {

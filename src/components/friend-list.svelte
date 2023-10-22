@@ -1,6 +1,6 @@
 <script>
   import { liveQuery } from "dexie";
-  import { db } from "../js/db";
+  import { db } from "../js/libs/db";
 
   // Query parameters:
   export let minAge = 18;

@@ -50,3 +50,11 @@ resources/windows/splash
 
 # Production build
 www/
+
+tests/reports
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/

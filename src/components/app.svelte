@@ -8,59 +8,18 @@
 </script>
 
 <script>
-  import { getDevice } from "framework7/lite-bundle";
   import { f7, f7ready, App } from "framework7-svelte";
   import { onMount } from "svelte";
   import { isLoading } from "svelte-i18n";
   import { capacitorApp } from "../js/capacitor-app";
-
-  import { routes } from "../js/routes";
-  import { store } from "../js/store";
+  import { f7params } from "../js/f7params";
+  import { store } from "../js/stores/index";
 
   import AppPanel from "./app-panel.svelte";
   import AppToolbar from "./app-toolbar.svelte";
 
-  const device = getDevice();
-
-  // Framework7 Parameters
-  let f7params = {
-    name: "Bonker", // App name
-    theme: "auto", // Automatic theme detection
-    darkMode: "auto",
-
-    // App store
-    store: store,
-    // App routes
-    routes: routes,
-
-    // Register service worker (only on production build)
-    serviceWorker:
-      process.env.NODE_ENV === "production"
-        ? {
-            path: "/service-worker.js",
-          }
-        : {},
-
-    // Input settings
-    input: {
-      scrollIntoViewOnFocus: device.capacitor,
-      scrollIntoViewCentered: device.capacitor,
-    },
-    // Capacitor Statusbar settings
-    statusbar: {
-      iosOverlaysWebView: true,
-      androidOverlaysWebView: false,
-    },
-
-    card: {
-      swipeToClose: true,
-      hideToolbarOnOpen: false,
-      hideNavbarOnOpen: false,
-    },
-  };
-
   onMount(() => {
-    const storage = JSON.parse(window.localStorage.getItem("bonker"));
+    store.dispatch("getBonkerApp");
     f7ready(() => {
       // Init capacitor APIs (see capacitor-app.js)
       if (f7.device.capacitor) {
@@ -68,12 +27,9 @@
       }
 
       // Call F7 APIs here
+      const theme = store.state.bonkerApp?.theme;
       f7.setDarkMode(
-        storage && storage?.theme && storage.theme !== "auto"
-          ? storage.theme === "true"
-            ? true
-            : false
-          : "auto",
+        theme && theme !== "auto" ? (theme === "true" ? true : false) : "auto",
       );
     });
   });

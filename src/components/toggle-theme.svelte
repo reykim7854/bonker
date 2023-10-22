@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import {
     f7,
     BlockTitle,
@@ -8,34 +7,15 @@
     ListItem,
     PageContent,
     Sheet,
+    useStore,
   } from "framework7-svelte";
+  import { ToggleTheme } from "../js/utils/toggle-theme.js";
 
-  let theme = "auto";
-
-  /**
-   * For toggling light or dark theme
-   *
-   * @param event button properties for toggling theme
-   */
-  const toggleTheme = (event) => {
-    const value = event.target.value;
-    theme = value;
-
-    f7.setDarkMode(
-      value === "true" ? true : value === "false" ? false : "auto",
-    );
-
-    const storage = JSON.parse(window.localStorage.getItem("bonker"));
-    window.localStorage.setItem(
-      "bonker",
-      JSON.stringify({ ...storage, ...{ theme: value } }),
-    );
-  };
-
-  onMount(() => {
-    const storage = JSON.parse(window.localStorage.getItem("bonker"));
-    theme = storage && storage?.theme ? storage.theme : "auto";
-  });
+  const theme = new ToggleTheme();
+  let storeTheme = useStore("bonkerAppTheme", (e) => (storeTheme = e));
+  $: f7.setDarkMode(
+    storeTheme === "true" ? true : storeTheme === "false" ? false : "auto",
+  );
 </script>
 
 <Link
@@ -63,8 +43,8 @@
         title="Same as System"
         name="toggle-theme"
         value="auto"
-        checked={theme === "auto"}
-        onChange={toggleTheme}
+        checked={theme.fieldTheme === "auto"}
+        onChange={(e) => theme.toggleTheme(e.target.value)}
       ></ListItem>
       <ListItem
         radio
@@ -72,17 +52,17 @@
         title="Light"
         value="false"
         name="toggle-theme"
-        checked={theme === "false"}
-        onChange={toggleTheme}
+        checked={theme.fieldTheme === "false"}
+        onChange={(e) => theme.toggleTheme(e.target.value)}
       ></ListItem>
       <ListItem
         radio
         radioIcon="end"
         title="Dark"
-        value="true"
+        value={true}
         name="toggle-theme"
-        checked={theme === "true"}
-        onChange={toggleTheme}
+        checked={theme.fieldTheme === "true"}
+        onChange={(e) => theme.toggleTheme(e.target.value)}
       ></ListItem>
     </List>
   </PageContent>

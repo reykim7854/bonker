@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Bonker</string>
+    <string name="title_activity_main">Bonker</string>
+    <string name="package_name">io.framework7.bonker</string>
+    <string name="custom_url_scheme">io.framework7.bonker</string>
+</resources>

@@ -16,7 +16,7 @@ import App from "../components/app.svelte";
 
 // import extra module
 import "../localization/i18n.js";
-import "./db.js";
+import "./libs/db.js";
 
 // Init F7 Svelte Plugin
 Framework7.use(Framework7Svelte);

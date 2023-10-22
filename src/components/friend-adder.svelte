@@ -1,5 +1,5 @@
 <script>
-  import { db } from "../js/db";
+  import { db } from "../js/libs/db";
 
   export let defaultAge = 21;
 

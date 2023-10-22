@@ -45,3 +45,5 @@ www
 public
 build
 dist
+
+tests/reports
