@@ -40,7 +40,7 @@ export default async () => {
         "./tests/reports/**",
         "./tests/**/*.{spec,e2e}.js",
       ],
-      reporters: ["default", "html"],
+      reporters: process.env.CI ? ["dot"] : ["default", "html"],
       outputFile: {
         html: "tests/reports/html/index.html",
       },
