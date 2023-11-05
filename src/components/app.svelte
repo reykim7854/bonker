@@ -19,7 +19,7 @@
   import AppToolbar from "./app-toolbar.svelte";
 
   onMount(() => {
-    store.dispatch("getBonkerApp");
+    store.dispatch("getBonkerAppFromLocalStorage");
     f7ready(() => {
       // Init capacitor APIs (see capacitor-app.js)
       if (f7.device.capacitor) {

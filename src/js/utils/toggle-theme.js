@@ -21,15 +21,21 @@ class ToggleTheme {
 
   /**
    * Method for toggling light or dark theme
+   * @public
    * @method
    * @param event button properties for toggling theme
    */
   toggleTheme(value) {
-    if (value === "true" || value === "false" || value === "auto") {
-      store.dispatch("setBonkerApp", { theme: value });
-      this.#fieldTheme = value;
-    } else {
-      throw new Error("Non acceptable type or value!");
+    try {
+      if (value === "true" || value === "false" || value === "auto") {
+        store.dispatch("setBonkerApp", { theme: value });
+        store.dispatch("setBonkerAppToLocalStorage", { theme: value });
+        this.#fieldTheme = value;
+      } else {
+        throw new Error("Non acceptable type or value!");
+      }
+    } catch (error) {
+      //
     }
   }
 
