@@ -1,38 +1,31 @@
 <script>
-  import {
-    Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
-    Link,
-    Page,
-  } from "framework7-svelte";
+  import { Page, useStore } from "framework7-svelte";
+  import { Account } from "../js/utils/account.js";
+  import AccountCard from "../components/accounts/account-card.svelte";
+  import Fab from "../components/fab.svelte";
+  import Grid from "../components/grid.svelte";
   import Navbar from "../components/navbar.svelte";
+  import NoData from "../components/no-data.svelte";
+  import { accountStore } from "../js/stores/account.js";
+  import { onMount } from "svelte";
+
+  $: accounts = useStore(accountStore, "accounts", (e) => (accounts = e));
+
+  onMount(() => {
+    new Account().getAccounts();
+  });
 </script>
 
 <Page name="accounts">
   <Navbar title="Accounts" />
-  <Card>
-    <CardHeader
-      class="no-padding-bottom flex-direction-column align-items-flex-start"
-    >
-      <div>GoPay</div>
-      <small class="label">0000000000000000</small>
-    </CardHeader>
-    <CardContent>
-      <div class="label">Balance</div>
-      <h2 class="no-margin-vertical">Rp2.903.345.123.756</h2>
-    </CardContent>
-    <CardFooter>
-      <Link>Edit</Link>
-      <Link>Details</Link>
-    </CardFooter>
-  </Card>
+  {#if accounts.length <= 0}
+    <NoData></NoData>
+  {:else}
+    <Grid --min-column="300px">
+      {#each accounts as account (account.id)}
+        <AccountCard {...account} />
+      {/each}
+    </Grid>
+  {/if}
+  <Fab></Fab>
 </Page>
-
-<style scoped>
-  .label {
-    opacity: 0.5;
-    font-size: medium;
-  }
-</style>

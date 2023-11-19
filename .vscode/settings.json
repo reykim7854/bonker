@@ -9,16 +9,4 @@
     ],
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
-    "vitest.commandLine": "pnpm run test",
-    "vitest.include": [
-        "./tests/**/*.{test}.js"
-    ],
-    "vitest.exclude": [
-        "./tests/reports/**",
-        "./tests/**/*.{spec,e2e}.js",
-        "**/node_modules/**",
-        "**/dist/**",
-        "**/cypress/**",
-        "**/.{idea,git,cache,output,temp}/**"
-    ]
 }

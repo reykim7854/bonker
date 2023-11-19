@@ -8,15 +8,15 @@
 </script>
 
 <script>
-  import { f7, f7ready, App } from "framework7-svelte";
-  import { onMount } from "svelte";
-  import { isLoading } from "svelte-i18n";
-  import { capacitorApp } from "../js/capacitor-app";
-  import { f7params } from "../js/f7params";
-  import { store } from "../js/stores/index";
-
+  // eslint-disable-next-line sort-imports
+  import { App, f7, f7ready } from "framework7-svelte";
   import AppPanel from "./app-panel.svelte";
   import AppToolbar from "./app-toolbar.svelte";
+  import { capacitorApp } from "../js/capacitor-app";
+  import { f7params } from "../js/f7params";
+  import { isLoading } from "svelte-i18n";
+  import { onMount } from "svelte";
+  import { store } from "../js/stores/index";
 
   onMount(() => {
     store.dispatch("getBonkerAppFromLocalStorage");

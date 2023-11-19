@@ -1,5 +1,5 @@
 <script>
-  import { Navbar, NavLeft, NavTitle, Link } from "framework7-svelte";
+  import { Link, NavLeft, NavTitle, Navbar } from "framework7-svelte";
 
   export let title = "Bonker";
   export let backLink = false;

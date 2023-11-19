@@ -6,7 +6,6 @@
         "lokalise.i18n-ally",
         "eamodio.gitlens",
         "dbaeumer.vscode-eslint",
-        "zixuanchen.vitest-explorer",
         "ms-playwright.playwright",
         "github.vscode-github-actions"
     ]

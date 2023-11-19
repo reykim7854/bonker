@@ -1,16 +1,15 @@
-import OverviewPage from "../../pages/overview.svelte";
-import RecurringPage from "../../pages/recurring.svelte";
-import FormPage from "../../pages/form.svelte";
-import AccountsPage from "../../pages/accounts.svelte";
-import ProductPage from "../../pages/product.svelte";
-import SettingsPage from "../../pages/settings.svelte";
-
 import DynamicRoutePage from "../../pages/dynamic-route.svelte";
-import RequestAndLoad from "../../pages/request-and-load.svelte";
 import NotFoundPage from "../../pages/404.svelte";
+import OverviewPage from "../../pages/overview.svelte";
+import ProductPage from "../../pages/product.svelte";
+import RecurringPage from "../../pages/recurring.svelte";
+import RequestAndLoad from "../../pages/request-and-load.svelte";
+import SettingsPage from "../../pages/settings.svelte";
+import account from "./account";
 
 export const routes = [
   {
+    name: "overview",
     path: "/",
     component: OverviewPage,
   },
@@ -18,14 +17,7 @@ export const routes = [
     path: "/recurring/",
     component: RecurringPage,
   },
-  {
-    path: "/form/",
-    component: FormPage,
-  },
-  {
-    path: "/accounts/",
-    component: AccountsPage,
-  },
+  ...account,
   {
     path: "/product/:id/",
     component: ProductPage,
