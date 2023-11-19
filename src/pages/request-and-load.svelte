@@ -1,5 +1,5 @@
 <script>
-  import { Page, Navbar, Block, List, ListItem } from "framework7-svelte";
+  import { Block, List, ListItem, Navbar, Page } from "framework7-svelte";
 
   export let user;
 </script>

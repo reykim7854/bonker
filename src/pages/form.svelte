@@ -1,15 +1,15 @@
 <script>
   import {
-    Page,
-    Navbar,
+    Block,
+    BlockTitle,
+    Button,
     List,
     ListInput,
     ListItem,
-    Toggle,
-    BlockTitle,
-    Button,
+    Navbar,
+    Page,
     Range,
-    Block,
+    Toggle,
   } from "framework7-svelte";
 </script>
 

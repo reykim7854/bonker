@@ -1,5 +1,5 @@
 <script>
-  import { Page, Navbar, BlockTitle, Block, useStore } from "framework7-svelte";
+  import { Block, BlockTitle, Navbar, Page, useStore } from "framework7-svelte";
 
   export let f7route;
 

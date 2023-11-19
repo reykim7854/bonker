@@ -1,5 +1,5 @@
 <script>
-  import { Page, BlockTitle } from "framework7-svelte";
+  import { BlockTitle, Page } from "framework7-svelte";
 
   import Navbar from "../components/navbar.svelte";
 </script>

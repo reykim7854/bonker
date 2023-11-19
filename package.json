@@ -12,10 +12,7 @@
     "build-capacitor-ios": "cross-env NODE_ENV=production vite build && npx cap copy ios",
     "build-capacitor-android": "cross-env NODE_ENV=production vite build && npx cap copy android",
     "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./src/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./src/fonts/",
-    "lint": "pnpm exec eslint --fix . --ext .js,.svelte",
-    "test": "pnpm exec vitest",
-    "test:ui": "pnpm exec vitest --ui --coverage.enabled=true",
-    "coverage": "pnpm exec vitest run --coverage",
+    "lint": "pnpm exec eslint --fix",
     "prepare": "pnpm exec husky install",
     "test-e2e": "pnpm exec playwright test -c playwright.config.js",
     "test-e2e:ui": "pnpm exec playwright test -c playwright.config.js --ui"

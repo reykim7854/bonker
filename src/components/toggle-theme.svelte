@@ -1,12 +1,12 @@
 <script>
   import {
-    f7,
     BlockTitle,
     Link,
     List,
     ListItem,
     PageContent,
     Sheet,
+    f7,
     useStore,
   } from "framework7-svelte";
   import { ToggleTheme } from "../js/utils/toggle-theme.js";
